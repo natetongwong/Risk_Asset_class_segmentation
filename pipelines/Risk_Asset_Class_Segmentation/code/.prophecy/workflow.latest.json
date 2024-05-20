@@ -1,0 +1,612 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : {
+      "businessRules" : {
+        "rules" : [ ],
+        "sharedRules" : [ ]
+      }
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.97",
+        "pyPiVersion" : "1.8.21"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/Risk_Asset_Class_Segmentation",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "Risk_Asset_Class_Segmentation",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "109",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "nathanprophecyioteam.riskassetclasssegmentation.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "224",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "225",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "risk_asset_class_segmentation",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "mU-_rHJaVGWfSBGtc6zcl",
+    "source" : "xjUexEUw4snBRdI2Bnzk3$$_S2weWgXnh9EU1oGgZjjc",
+    "sourcePort" : "5ohfwBC7CJ3mzlX-1-Zw5$$xfp6d5eTxMbvcsIOpkEBn",
+    "target" : "kCd6l4t_SgBMTrSNJuete$$t4OUC-3uMTfSg6XFDNDa8",
+    "targetPort" : "oIIz_8GbBV0SnHI9RHIqq$$XpqYGP-W63baABNQ2cWdJ"
+  }, {
+    "id" : "aSlAYG4fcaH1_6K5OOdTF",
+    "source" : "kCd6l4t_SgBMTrSNJuete$$t4OUC-3uMTfSg6XFDNDa8",
+    "sourcePort" : "lAkxEC74N_aV9X0MGQWYl$$FjDsxMPN5qO7jOKqdaw7E",
+    "target" : "vTTI8ZL3PTNDvaqVNx_Sj$$DvESVIzAwJ5o7CPltS-aD",
+    "targetPort" : "gDHBRec3ap3EJdSu2feio$$wJRbOEmZWAYUMchIRSusl"
+  } ],
+  "processes" : {
+    "vTTI8ZL3PTNDvaqVNx_Sj$$DvESVIzAwJ5o7CPltS-aD" : {
+      "id" : "vTTI8ZL3PTNDvaqVNx_Sj$$DvESVIzAwJ5o7CPltS-aD",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_1",
+        "slug" : "SchemaTransform_1",
+        "x" : -300,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gDHBRec3ap3EJdSu2feio$$wJRbOEmZWAYUMchIRSusl",
+          "slug" : "Reformat_1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "PRODUCT_TYPE_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CON_BUS_INDC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MONTH_KEY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LG_PRODUCT_L08_KEY",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "REGLT_COUNTERPARTY_TYPE_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TCE",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "BASEL_RETAIL_CORP_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SOURCE_SYSTEM_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CONSOL_ANNUAL_REVENUE",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ANZSIC_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "OWNER_OCCUPIED_FLG",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "hEVdfiVx3la3845oNl-cC$$oVgOGb7UjBE0lPFTxsUSv",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "",
+        "transformations" : [ {
+          "AddRule" : {
+            "expression" : {
+              "format" : "sql",
+              "expression" : "Risk_Asset_Class_Segmentation()"
+            },
+            "param_errors" : [ {
+              "paramName" : "PRODUCT_TYPE_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "CON_BUS_INDC",
+              "hasError" : false
+            }, {
+              "paramName" : "REGLT_COUNTERPARTY_TYPE_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "LG_PRODUCT_L08_KEY",
+              "hasError" : false
+            }, {
+              "paramName" : "TCE",
+              "hasError" : false
+            }, {
+              "paramName" : "MONTH_KEY",
+              "hasError" : false
+            }, {
+              "paramName" : "BASEL_RETAIL_CORP_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "SOURCE_SYSTEM_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "CONSOL_ANNUAL_REVENUE",
+              "hasError" : false
+            }, {
+              "paramName" : "ANZSIC_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "OWNER_OCCUPIED_FLG",
+              "hasError" : false
+            } ]
+          },
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddRule",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "",
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          }
+        } ],
+        "activeTab" : "transformations",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.17.dev&projectSubscriptionProjectId=224&path=gems/SchemaTransform",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "xjUexEUw4snBRdI2Bnzk3$$_S2weWgXnh9EU1oGgZjjc" : {
+      "id" : "xjUexEUw4snBRdI2Bnzk3$$_S2weWgXnh9EU1oGgZjjc",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_0",
+        "slug" : "Script_0",
+        "x" : -660,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "5ohfwBC7CJ3mzlX-1-Zw5$$xfp6d5eTxMbvcsIOpkEBn",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "PRODUCT_TYPE_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CON_BUS_INDC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MONTH_KEY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LG_PRODUCT_L08_KEY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "REGLT_COUNTERPARTY_TYPE_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TCE",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "BASEL_RETAIL_CORP_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SOURCE_SYSTEM_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CONSOL_ANNUAL_REVENUE",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ANZSIC_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "OWNER_OCCUPIED_FLG",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      },
+      "properties" : {
+        "script" : "from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType\nfrom pyspark.sql.functions import col\n\n# Define schema for the DataFrame\nschema = StructType([\n    StructField(\"PRODUCT_TYPE_CODE\", StringType(), True),\n    StructField(\"CON_BUS_INDC\", StringType(), True),\n    StructField(\"MONTH_KEY\", StringType(), True),\n    StructField(\"LG_PRODUCT_L08_KEY\", StringType(), True),\n    StructField(\"REGLT_COUNTERPARTY_TYPE_CODE\", StringType(), True),\n    StructField(\"TCE\", IntegerType(), True),\n    StructField(\"BASEL_RETAIL_CORP_CODE\", StringType(), True),\n    StructField(\"SOURCE_SYSTEM_CODE\", StringType(), True),\n    StructField(\"CONSOL_ANNUAL_REVENUE\", IntegerType(), True),\n    StructField(\"ANZSIC_CODE\", StringType(), True),\n    StructField(\"OWNER_OCCUPIED_FLG\", StringType(), True)\n])\n\n# Sample data\ndata = [\n    ('HL', 'C', '201305', '', '540', 50000, 'SMERET', 'CSH', 800000000, '7710', 'N'),\n    ('NT', 'C', '201309', '', '540', 50000, 'SMECORP', 'OTH', 1000000000, '7714', 'N'),\n    ('HL', 'B', '201305', '', '540', 50000, 'SMERET', 'CSH', 800000000, '7710', 'N'),\n    ('NT', 'C', '201210', '', '540', 25000, 'SMECORP', 'AAA', 850000000, '7715', 'N'),\n    ('NT', 'C', '201211', '', '510', 40000, 'SMECORP', 'OTH', 750000001, '7716', 'N'),\n    ('NT', 'C', '201212', '', '534', 50000, 'SMECORP', 'OTH', 800000000, '7717', 'N'),\n    ('NT', 'C', '201201', '', '530', 75000, 'SMECORP', 'OTH', 550000000, '7728', 'N'),\n    ('NT', 'C', '201201', '', '538', 75000, 'SMECORP', 'OTH', 900000000, '7718', 'N'),\n    ('NT', 'B', '201201', '', '540', 75000, 'SMECORP', 'OTH', 850000000, '7718', 'N'),\n    ('NT', 'B', '201201', '', '540', 75000, 'SMECORP', 'OTH', 550000000, '7718', 'N')\n]\n\n# Create DataFrame\nout0 = spark.createDataFrame(data, schema)\n",
+        "scriptMethodHeader" : "def Script(spark: SparkSession) -> DataFrame:",
+        "scriptMethodFooter" : "    return out0"
+      }
+    },
+    "kCd6l4t_SgBMTrSNJuete$$t4OUC-3uMTfSg6XFDNDa8" : {
+      "id" : "kCd6l4t_SgBMTrSNJuete$$t4OUC-3uMTfSg6XFDNDa8",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_3",
+        "slug" : "SchemaTransform_3",
+        "x" : -480,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "oIIz_8GbBV0SnHI9RHIqq$$XpqYGP-W63baABNQ2cWdJ",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "PRODUCT_TYPE_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CON_BUS_INDC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MONTH_KEY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LG_PRODUCT_L08_KEY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "REGLT_COUNTERPARTY_TYPE_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TCE",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "BASEL_RETAIL_CORP_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SOURCE_SYSTEM_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CONSOL_ANNUAL_REVENUE",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ANZSIC_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "OWNER_OCCUPIED_FLG",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "lAkxEC74N_aV9X0MGQWYl$$FjDsxMPN5qO7jOKqdaw7E",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "",
+        "transformations" : [ {
+          "AddRule" : {
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            },
+            "param_errors" : [ ]
+          },
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "LG_PRODUCT_L08_KEY",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "CASE\nWHEN MONTH_KEY > '201304' THEN 'PFCRC'\nELSE ''\nEND"
+            }
+          }
+        } ],
+        "activeTab" : "transformations",
+        "columnsSelector" : [ "oIIz_8GbBV0SnHI9RHIqq$$XpqYGP-W63baABNQ2cWdJ##MONTH_KEY" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.17.dev&projectSubscriptionProjectId=224&path=gems/SchemaTransform",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}
