@@ -22,10 +22,24 @@ pipelines:
     createdAt: '2024-05-20 02:47:43'
     datasets:
       inputs: []
-      outputs: []
+      outputs:
+      - datasets/targetlocation
     subgraphs: []
     dependencies: {}
-datasets: {}
+datasets:
+  datasets/targetlocation:
+    name: targetlocation
+    description: ''
+    author: nathan@prophecy.io
+    createdAt: '2024-05-21 04:59:42'
+    mode: batch
+    physicalDatasets:
+      Sales-eng:
+        fabricId: 109
+        datasetType: File
+        description: ''
+        author: nathan@prophecy.io
+        createdAt: '2024-05-21 04:59:42'
 templates: {}
 jobs: {}
 gemContainer:
