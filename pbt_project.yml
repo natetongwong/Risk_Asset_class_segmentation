@@ -22,8 +22,7 @@ pipelines:
     createdAt: '2024-05-20 02:47:43'
     datasets:
       inputs: []
-      outputs:
-      - datasets/targetlocation
+      outputs: []
     subgraphs: []
     dependencies: {}
 datasets:
