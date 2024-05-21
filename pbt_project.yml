@@ -1,7 +1,7 @@
 name: Risk_Asset_class_segmentation
 description: |
   2.5 Business use case: Risk Asset class segmentation
-version: '1.0'
+version: '1.1'
 author: nathan@prophecy.io
 language: python
 buildSystem: ''
