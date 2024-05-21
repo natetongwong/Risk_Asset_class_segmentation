@@ -6,5 +6,5 @@ from prophecy.libs import typed_lit
 from risk_asset_class_segmentation.config.ConfigStore import *
 from risk_asset_class_segmentation.functions import *
 
-def SchemaTransform_1(spark: SparkSession, Reformat_1: DataFrame) -> DataFrame:
-    return Reformat_1.select(expr("*"), Risk_Asset_Class_Segmentation())
+def transform_risk_asset_class_segmentation(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.withColumn(get_alias(Risk_Asset_Class_Segmentation()), Risk_Asset_Class_Segmentation())

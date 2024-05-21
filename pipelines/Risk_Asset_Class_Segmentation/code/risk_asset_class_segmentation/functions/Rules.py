@@ -91,4 +91,5 @@ def Risk_Asset_Class_Segmentation(
           ),
           lit("IPRE_A_OTHER")
         )\
+        .otherwise(lit(None))\
         .alias("Asset_Class")

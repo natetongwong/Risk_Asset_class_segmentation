@@ -8,8 +8,7 @@ from risk_asset_class_segmentation.graph import *
 
 def pipeline(spark: SparkSession) -> None:
     df_Script_0 = Script_0(spark)
-    df_SchemaTransform_3 = SchemaTransform_3(spark, df_Script_0)
-    df_SchemaTransform_1 = SchemaTransform_1(spark, df_SchemaTransform_3)
+    df_transform_risk_asset_class_segmentation = transform_risk_asset_class_segmentation(spark, df_Script_0)
 
 def main():
     spark = SparkSession.builder\
