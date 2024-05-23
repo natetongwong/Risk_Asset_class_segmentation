@@ -24,7 +24,7 @@
       "isFunctionsPackageDirDefined" : true
     },
     "language" : "python",
-    "fabricId" : "109",
+    "fabricId" : "117",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -78,154 +78,21 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "EIysjSnxTMutj4CiBbXu-$$Rz7TrUXKH03davGThPmqo",
-    "source" : "xjUexEUw4snBRdI2Bnzk3$$_S2weWgXnh9EU1oGgZjjc",
-    "sourcePort" : "5ohfwBC7CJ3mzlX-1-Zw5$$xfp6d5eTxMbvcsIOpkEBn",
-    "target" : "lWCbv1WvI8dAFX_17fc5P$$m81PK1dAheLywBb3IXIye",
-    "targetPort" : "amLa0FaC8PrUUoZKj1d9p$$2Xe2GzWIR5zCIEK74vh7K"
+    "id" : "5KF4ZSsGzKCL6YI617C9v$$xWramieYc9CfrByJAGGIf",
+    "source" : "yeJjz8uk4n9zKRBb_4vgG$$9v1Lwv9Wxud59jTCC8uPS",
+    "sourcePort" : "MyEquyNf5-SKod1pxBNGM$$l_b_OXRpbC8B-_QOhKH4N",
+    "target" : "fgFXTLAAyQKRp413J9k7L$$uSmoKFxECb7uuJ9zA1wj7",
+    "targetPort" : "xUkO-4JiG3L6GYxkaf6mN$$ve2vZUhzpaO5ci5OAWRBU"
   } ],
   "processes" : {
-    "xjUexEUw4snBRdI2Bnzk3$$_S2weWgXnh9EU1oGgZjjc" : {
-      "id" : "xjUexEUw4snBRdI2Bnzk3$$_S2weWgXnh9EU1oGgZjjc",
-      "component" : "Script",
+    "fgFXTLAAyQKRp413J9k7L$$uSmoKFxECb7uuJ9zA1wj7" : {
+      "id" : "fgFXTLAAyQKRp413J9k7L$$uSmoKFxECb7uuJ9zA1wj7",
+      "component" : "AddRule",
       "metadata" : {
-        "label" : "Script_0",
-        "slug" : "Script_0",
-        "x" : -560,
-        "y" : -160,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "5ohfwBC7CJ3mzlX-1-Zw5$$xfp6d5eTxMbvcsIOpkEBn",
-          "slug" : "out0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "PRODUCT_TYPE_CODE",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "CON_BUS_INDC",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "MONTH_KEY",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "LG_PRODUCT_L08_KEY",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "REGLT_COUNTERPARTY_TYPE_CODE",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "TCE",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "BASEL_RETAIL_CORP_CODE",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "SOURCE_SYSTEM_CODE",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "CONSOL_ANNUAL_REVENUE",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "ANZSIC_CODE",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "OWNER_OCCUPIED_FLG",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : true,
-        "autoUpdateOnRun" : true
-      },
-      "properties" : {
-        "script" : "from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType\nfrom pyspark.sql.functions import col\n\n# Define schema for the DataFrame\nschema = StructType([\n    StructField(\"PRODUCT_TYPE_CODE\", StringType(), True),\n    StructField(\"CON_BUS_INDC\", StringType(), True),\n    StructField(\"MONTH_KEY\", StringType(), True),\n    StructField(\"LG_PRODUCT_L08_KEY\", StringType(), True),\n    StructField(\"REGLT_COUNTERPARTY_TYPE_CODE\", StringType(), True),\n    StructField(\"TCE\", IntegerType(), True),\n    StructField(\"BASEL_RETAIL_CORP_CODE\", StringType(), True),\n    StructField(\"SOURCE_SYSTEM_CODE\", StringType(), True),\n    StructField(\"CONSOL_ANNUAL_REVENUE\", IntegerType(), True),\n    StructField(\"ANZSIC_CODE\", StringType(), True),\n    StructField(\"OWNER_OCCUPIED_FLG\", StringType(), True)\n])\n\n# Sample data\ndata = [\n    ('HL', 'C', '201305', '', '540', 50000, 'SMERET', 'CSH', 800000000, '7710', 'N'),\n    ('NT', 'C', '201309', '', '540', 50000, 'SMECORP', 'OTH', 1000000000, '7714', 'N'),\n    ('HL', 'B', '201305', '', '540', 50000, 'SMERET', 'CSH', 800000000, '7710', 'N'),\n    ('NT', 'C', '201210', '', '540', 25000, 'SMECORP', 'AAA', 850000000, '7715', 'N'),\n    ('NT', 'C', '201211', '', '510', 40000, 'SMECORP', 'OTH', 750000001, '7716', 'N'),\n    ('NT', 'C', '201212', '', '534', 50000, 'SMECORP', 'OTH', 800000000, '7717', 'N'),\n    ('NT', 'C', '201201', '', '530', 75000, 'SMECORP', 'OTH', 550000000, '7728', 'N'),\n    ('NT', 'C', '201201', '', '538', 75000, 'SMECORP', 'OTH', 900000000, '7718', 'N'),\n    ('NT', 'B', '201201', '', '540', 75000, 'SMECORP', 'OTH', 850000000, '7718', 'N'),\n    ('NT', 'B', '201201', '', '540', 75000, 'SMECORP', 'OTH', 550000000, '7718', 'N')\n]\n\n# Create DataFrame\nout0 = spark.createDataFrame(data, schema)\n",
-        "scriptMethodHeader" : "def Script(spark: SparkSession) -> DataFrame:",
-        "scriptMethodFooter" : "    return out0"
-      }
-    },
-    "lWCbv1WvI8dAFX_17fc5P$$m81PK1dAheLywBb3IXIye" : {
-      "id" : "lWCbv1WvI8dAFX_17fc5P$$m81PK1dAheLywBb3IXIye",
-      "component" : "SchemaTransform",
-      "metadata" : {
-        "label" : "transform_risk_asset_class_segmentation",
-        "slug" : "transform_risk_asset_class_segmentation",
-        "x" : -400,
-        "y" : -160,
+        "label" : "Add_Rule",
+        "slug" : "Add_Rule",
+        "x" : -420,
+        "y" : -120,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -233,11 +100,20 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "amLa0FaC8PrUUoZKj1d9p$$2Xe2GzWIR5zCIEK74vh7K",
+          "id" : "xUkO-4JiG3L6GYxkaf6mN$$ve2vZUhzpaO5ci5OAWRBU",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
             "fields" : [ {
+              "name" : "ID",
+              "type" : "integer",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
               "name" : "PRODUCT_TYPE_CODE",
               "type" : "string",
               "nullable" : true,
@@ -341,7 +217,7 @@
           "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "tYNXALbpr1EbbWYhxc6b4$$CBO4JPDoDMVHg57j2Mn7R",
+          "id" : "4fYUjDPQz7Wkc0a2I5a-h$$fAb1zGaueVopnJCrcEtIt",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -419,8 +295,35 @@
         "columnsSelector" : [ ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.18.dev&projectSubscriptionProjectId=224&path=gems/SchemaTransform",
-        "projectName" : "ProphecySparkBasicsPython"
+        "gemId" : "gems/AddRule",
+        "projectName" : "Ruleset_RiskAssetClassSegmentation"
+      }
+    },
+    "yeJjz8uk4n9zKRBb_4vgG$$9v1Lwv9Wxud59jTCC8uPS" : {
+      "id" : "yeJjz8uk4n9zKRBb_4vgG$$9v1Lwv9Wxud59jTCC8uPS",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Sample_Data",
+        "slug" : "Sample_Data",
+        "x" : -580,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "MyEquyNf5-SKod1pxBNGM$$l_b_OXRpbC8B-_QOhKH4N",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/AssetClass_SampleData"
       }
     }
   },
@@ -430,23 +333,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.metainfo.functions.businessRules.rules[0].data[10].outputs[0]",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "Output cannot contain `Any` as data.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  } ]
+  }
 }

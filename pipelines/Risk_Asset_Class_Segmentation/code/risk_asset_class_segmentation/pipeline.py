@@ -7,8 +7,8 @@ from prophecy.utils import *
 from risk_asset_class_segmentation.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_Script_0 = Script_0(spark)
-    df_transform_risk_asset_class_segmentation = transform_risk_asset_class_segmentation(spark, df_Script_0)
+    df_Sample_Data = Sample_Data(spark)
+    df_Add_Rule = Add_Rule(spark, df_Sample_Data)
 
 def main():
     spark = SparkSession.builder\
